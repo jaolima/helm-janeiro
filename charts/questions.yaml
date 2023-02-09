@@ -22,7 +22,7 @@ questions:
    label: Informa a tag
    group: "Images"
 - variable: autoscaling.enabled
- default: "false"
+ default: "true"
  description: "HPA Config"
  label: Use HPA
  type: boolean
