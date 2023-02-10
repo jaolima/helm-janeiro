@@ -59,3 +59,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        - name: env-vars
+          configMap:
+            name: {{ include "app-joao.fullname" . }}
+            items:
+              - key: env-vars
+                path: env-vars

@@ -1,0 +1,12 @@
+{{- if .Values.configmap.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+
+  name: {{ .Values.configmap | default (include "app-joao.fullname" .) }}
+  labels:
+    {{- include "app-joao.labels" . | nindent 4 }}
+data:
+    {{- toYaml . | nindent 2-}}
+{{- end -}}
+{{- end -}}
